@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout.njk" %}
 
 
 {% block head %} <title>Sobre - Paulo Reis</title> {% endblock %}
@@ -7,13 +7,13 @@
 
         <div id="wrapper">
 
-            <img src="foto_user.png" alt="Paulo Reis" />
+            <img src="{{about.avatar_url}}" alt="Imagem de {{about.name}}" />
 
-            <h1>Paulo Reis</h1>
+            <h1>{{about.name}}</h1>
 
-            <h2>Aluno - Rocketseat</h2>
+            <h2>{{about.rule}}</h2>
 
-            <p>Amante da programação e apaixonado pelas melhores tecnologias do mercado. Focado em se tornar um desenvovedor sênior full-stack com JavaScript e as tecnologias omnistack. Aluno da <a href="http://Rocketseat.com.br" target="_blank" >Rocketseat</a></p>
+            <p>{{about.description}} {{about.link}}</p>
         
         </div>
 

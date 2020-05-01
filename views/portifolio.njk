@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout.njk" %}
 
 {% block head %}
 
@@ -18,120 +18,35 @@
 
         <section class="cards">
 
-            <article class="card" id="GykTLqODQuU">
+            {% for item in itens %}
 
-                <div class="card_image">
-                    <img src="https://img.youtube.com/vi/GykTLqODQuU/maxresdefault.jpg" alt="Video aula" />
-                </div>
-    
-                <div class="card_content">
-                    <p>formulário animado com JS puro e CSS Animation | Mayk Brito</p>
-                </div>
-    
-                <div class="card_info">
-                    <p>57 min</p>
-    
-                    <p class="card_price">Grátis</p>
+                <article class="card" id="{{item.id}}">
 
-                </div>
+                    <div class="card_image {{ 'featured-wrapper' if item.featured }}">
+                        <img src="https://img.youtube.com/vi/{{item.id}}/maxresdefault.jpg" alt="Vídeo de {{item.title}}" />
 
-            </article>
+                        {% if item.featured %}
 
-            <article class="card" id="HN1UjzRSdBk">
+                            <div class="featured">Featured</div>
 
-                <div class="card_image">
-                    <img src="https://img.youtube.com/vi/HN1UjzRSdBk/maxresdefault.jpg" alt="Video aula" />
-                </div>
-    
-                <div class="card_content">
-                    <p>Desvendando o css grid na prática | Mayk Brito</p>
-                </div>
-    
-                <div class="card_info">
-                    <p>36 min</p>
-    
-                    <p class="card_price">Grátis</p>
+                        {% endif %}
 
-                </div>
+                    </div>
+        
+                    <div class="card_content">
+                        <p>{{item.title}}</p>
+                    </div>
+        
+                    <div class="card_info">
+                        <p>{{item.duration}}</p>
+        
+                        <p class="card_price">{{item.price}}</p>
 
-            </article>
+                    </div>
 
-            <article class="card" id="rAzHvYnQ8DY">
+                </article>
 
-                <div class="card_image">
-                    <img src="https://img.youtube.com/vi/rAzHvYnQ8DY/maxresdefault.jpg" alt="Video aula" />
-                </div>
-    
-                <div class="card_content">
-                    <p>Array: Higher Order Functions | Mayk Brito</p>
-                </div>
-    
-                <div class="card_info">
-                    <p>54 min</p>
-    
-                    <p class="card_price">Grátis</p>
-
-                </div>
-
-            </article>
-
-            <article class="card" id="H91DhKPjhPk">
-
-                <div class="card_image">
-                    <img src="https://img.youtube.com/vi/H91DhKPjhPk/maxresdefault.jpg" alt="Video aula" />
-                </div>
-    
-                <div class="card_content">
-                    <p></p>Responsividade na Prática | Masterclass #08 | Diego Fernandes</p>
-                </div>
-    
-                <div class="card_info">
-                    <p>1h 30 min</p>
-    
-                    <p class="card_price">Grátis</p>
-
-                </div>
-
-            </article>
-
-            <article class="card" id="P65RJTTqkN4">
-
-                <div class="card_image">
-                    <img src="https://img.youtube.com/vi/P65RJTTqkN4/maxresdefault.jpg" alt="Video aula" />
-                </div>
-    
-                <div class="card_content">
-                    <p>Formulários no ReactJS & React Native com Unform | MasterClass #06 | Diego Fernandes</p>
-                </div>
-    
-                <div class="card_info">
-                    <p>47 min</p>
-    
-                    <p class="card_price">Grátis</p>
-
-                </div>
-
-            </article>
-
-            <article class="card" id="dlCUvYOlnDo">
-
-                <div class="card_image">
-                    <img src="https://img.youtube.com/vi/dlCUvYOlnDo/maxresdefault.jpg" alt="Video aula" />
-                </div>
-    
-                <div class="card_content">
-                    <p>Usando Serverless, Jest e Node.js para corrigir desafios | Behind the Code #13 | Diego Fernandes</p>
-                </div>
-    
-                <div class="card_info">
-                    <p>55 min</p>
-    
-                    <p class="card_price">Grátis</p>
-
-                </div>
-
-            </article>
-
+            {% endfor %}
 
         </section>
 
