@@ -90,6 +90,7 @@ header {
 #links-footer a{
     padding-bottom: 5px;
     border-bottom: 2px solid rgba(255, 255, 255, 0.411);
+    cursor: pointer;
 }
 
             /*CARDS*/
@@ -223,4 +224,56 @@ iframe {
     position: absolute;
     right: 5px;
     top: -10px;
+}
+
+/* VIDEO */
+
+.video {
+    max-width: 800px;
+
+    margin: 10px auto 50px;
+}
+
+.card_video {
+    position: relative;
+    padding-top: 62.5%;
+}
+
+.card_video iframe {
+    width: 100%;
+    height: 100%;
+    
+    top: 0;
+}
+
+.card_info-video {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    align-items: center;
+    text-align: center;
+
+    padding: 25px;
+}
+
+.card_price-video {
+    background-color: var(--color-rocket);
+    filter: brightness(90%);
+    border-radius: 20px;
+    box-shadow: 1px 1px 2px #7159c1;
+
+    padding: 7px 10px;
+    margin-left: 50px;
+    text-align: center;
+    
+    width: 150px;
+}
+
+
+.card_content-video {
+    padding: 20px;
+}
+
+.card_content-video p {
+    font-size: 20px;
 }
