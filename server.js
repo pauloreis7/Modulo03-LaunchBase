@@ -45,6 +45,4 @@ server.get("/video", function (req, res) {
     
 })
 
-server.listen(5000, function () {
-    console.log("Rodouuuu!!!!!")
-})
+server.listen(5000)
